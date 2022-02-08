@@ -1,0 +1,109 @@
+
+:root {
+    --blue: #00efff;
+  }
+
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    /* background-color: #fff; */
+    font-size: 62.5%;
+    }
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #001f25;
+}
+
+.loader{
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.loader span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(calc(36deg * var(--i)));
+}
+
+.loader span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: transparent;
+    border: 4px solid var(--blue);
+    box-sizing: border-box;
+    box-shadow: 0 0 20rem var(--blue),
+    -3rem -3rem 0 var(--blue),
+    -3rem -3rem 2rem var(--blue),
+    3rem 3rem 0 var(--blue),
+    3rem 3rem 2rem var(--blue),
+    3rem -3rem 0 var(--blue),
+    3rem -3rem 2rem var(--blue),
+    -3rem 3rem 0 var(--blue),
+    -3rem 3rem 2rem var(--blue);
+    animation: animate 5s linear infinite;
+    animation-delay: calc(-0.25s * var(--i));
+    transform-origin: 2rem;
+    transition: 2s;
+}
+
+.loader:hover span::before{
+    box-shadow: 0 0 2rem var(--blue),
+    -20rem -20rem 0 var(--blue),
+    -20rem -20rem 2rem var(--blue),
+    20rem 20rem 0 var(--blue),
+    20rem 20rem 2rem var(--blue),
+    20rem -20rem 0 var(--blue),
+    20rem -20rem 2rem var(--blue),
+    -20rem 20rem 0 var(--blue),
+    -20rem 20rem 2rem var(--blue);
+    transform-origin: 25rem;
+}
+
+/* cause the ligh chnage effect */
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        transform: rotate(330deg);
+        filter: hue-rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
